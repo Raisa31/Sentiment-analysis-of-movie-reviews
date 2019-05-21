@@ -10,7 +10,6 @@ url = requests.get("https://www.imdb.com/title/tt0944947/reviews", timeout = 5)
 soup = BeautifulSoup(url.content, "html.parser")
 soup.prettify()
 review = soup.find_all("div",attrs = {"class" : "text show-more__control"})
-print(review)
 for text_1 in review:
     print(text_1.text)
     blob1 = TextBlob(text_1.text)
